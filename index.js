@@ -6,12 +6,12 @@ const currentPlayer = playerRed;
 
 const gameOver = false;
 
-const board;
+var board;
 
 const rows = 6;
 const columns = 7;
 
-window.addEventListener = function() {
+window.onload = function() {
     setGame();
 }
 
@@ -25,7 +25,20 @@ function setGame() {
 
             let tile = document.createElement("div");
             tile.id = r.toString() + "-" + c.toString();
+            tile.classList.add("tile");
+            tile.addEventListener("click", setPiece);
+            document.getElementById("board").append(tile);
         }
+        board.push(row);
     }
 
+}
+
+function setPiece() {
+    if (gameOver) {
+        return;
+    }
+    let coordinates = this.id.split("-");
+    let r = p
+     
 }

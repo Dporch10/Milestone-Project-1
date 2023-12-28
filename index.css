@@ -18,3 +18,14 @@ body {
     
 
 }
+
+.tile {
+height: 90px;
+width: 80px;
+margin: 5px;
+
+background-color: white;
+border-radius: 50%;
+border: 5px solid black;
+
+}
