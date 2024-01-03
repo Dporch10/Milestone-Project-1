@@ -6,7 +6,7 @@ const currentPlayer = playerRed;
 
 const gameOver = false;
 
-var board;
+
 
 const rows = 6;
 const columns = 7;
@@ -21,7 +21,7 @@ function setGame() {
     for (let r = 0; r < rows; r++){
         let row = [];
         for (let c = 0; c < columns; c++) {
-            row.puush(' ');
+            row.push(' ');
 
             let tile = document.createElement("div");
             tile.id = r.toString() + "-" + c.toString();
@@ -38,7 +38,19 @@ function setPiece() {
     if (gameOver) {
         return;
     }
-    let coordinates = this.id.split("-");
-    let r = p
+    let coords = this.id.split("-");
+    let r = valueOf (coords [0]);
+    let c = valueOf (coords [1]);
+
+    board [r][c] = currentPlayer;
+    let tile = this;
+    if (currentPlayer == playerRed) {
+        tile.classList.add("red-piece");
+        currentPlayer = playerYellow
+    }
      
+    else {
+        tile.classList.add("yellow-piece");
+        currentPlayer = playerRed
+    }
 }
